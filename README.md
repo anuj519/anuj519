@@ -1,20 +1,19 @@
 # Anuj Arora
 
-Robotics Engineering student at the University of Michigan focused on autonomous systems, mobile robotics, and embedded software.
+Robotics Engineering student at the University of Michigan focused on embedded robotics software, autonomous systems, and controls.
 
-My experience spans autonomous-vehicle sensor development, ROS 2 navigation, open-source robotic prostheses, and embedded sensing systems. I am currently building an autonomous indoor service robot while expanding my work in SLAM, planning, controls, and robotics software architecture.
+My experience spans physical mobile-robot autonomy, autonomous-vehicle sensor validation, open-source robotic prostheses, and embedded sensing systems. Recent work includes implementing and validating an end-to-end ROS 2 localization, mapping, and SLAM stack on a physical differential-drive robot.
 
 ## Featured work
 
-### [Autonomous Indoor Service Robot](https://github.com/anuj519/autonomous-indoor-service-robot)
+### [Physical Mobile Robot Localization, Mapping & Navigation](https://github.com/anuj519/mbot-autonomous-navigation)
 
-Developing a ROS 2 mobile-robot simulation for autonomous navigation in a custom multi-room office environment.
+Implemented a physical ROS 2 autonomy stack spanning embedded wheel control, odometry, waypoint navigation, LiDAR mapping, Monte Carlo Localization, and SLAM.
 
-- Integrated TurtleBot3, Gazebo Classic, RViz2, SLAM Toolbox, AMCL, and Nav2
-- Generated and saved 2D LiDAR occupancy maps
-- Implemented responsive WASD teleoperation with key-release stopping
-- Demonstrated localization and point-to-point autonomous navigation
-- Currently extending the system with C++ multi-waypoint missions, recovery handling, and repeated-trial evaluation
+- Tuned feedforward/PID wheel-speed control to **0.0028 m/s MAE** and implemented a C++ rotate-translate-rotate waypoint controller
+- Implemented motion-compensated LiDAR processing, Bresenham/log-odds occupancy mapping, probabilistic action and sensor models, and low-variance particle filtering
+- Achieved **0.026 m localization RMSE**, compared with **0.149 m for odometry alone**
+- Profiled MCL at **approximately 64 ms/update with 400 particles** on a Raspberry Pi and tuned real-robot uncertainty to eliminate duplicated map geometry
 
 ### [Open-Source Leg Research](https://github.com/anuj519/open-source-leg)
 
@@ -34,17 +33,26 @@ Contributed to an embedded soft-sensing system that converts a fabric touch matr
 - Worked with matrix scanning, serial communication, and OLED visualization
 - Supported low-latency state updates for a scalable 5x5 touch interface
 
+## Additional project
+
+### [Autonomous Indoor Service Robot](https://github.com/anuj519/autonomous-indoor-service-robot)
+
+Earlier independent ROS 2 simulation project exploring autonomous navigation in a custom multi-room office environment.
+
+- Integrated TurtleBot3, Gazebo Classic, RViz2, SLAM Toolbox, AMCL, and Nav2
+- Generated 2D LiDAR occupancy maps and demonstrated point-to-point autonomous navigation
+
 ## Technical toolkit
 
 | Area | Tools |
 | --- | --- |
-| Languages | C++, Python, MATLAB |
-| Robotics | ROS 2, Nav2, SLAM Toolbox, AMCL, Gazebo, RViz2 |
-| Embedded and systems | Raspberry Pi, Linux, Git, Docker, serial communication |
-| Engineering | Controls, autonomous navigation, sensor integration, SolidWorks, OnShape |
+| Languages | C, C++, Python, MATLAB |
+| Robotics | ROS 2, SLAM, MCL, Nav2, AMCL, LiDAR, Gazebo, RViz2 |
+| Embedded and systems | Raspberry Pi, RP2040, Linux, CAN, serial communication, Docker, Git |
+| Engineering | Controls, state estimation, sensor integration, hardware-in-the-loop validation |
 
 ## Current focus
 
-- Multi-goal navigation and recovery behavior in ROS 2
-- Quantitative evaluation of autonomous navigation performance
-- SLAM, state estimation, planning, and robotics systems integration
+- Embedded robotics software and controls
+- Physical robot localization, mapping, planning, and navigation
+- Performance-conscious C++ systems integration
